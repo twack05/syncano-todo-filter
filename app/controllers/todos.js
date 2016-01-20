@@ -1,3 +1,4 @@
+/*global SyncanoTodo */
 import Ember from 'ember';
 import TodoModel from 'syncano-todo/models/todo';
 
