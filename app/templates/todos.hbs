@@ -1,0 +1,18 @@
+
+<div class="row">
+  <div class="item-input">
+    {{input value=newItem placeholder="Enter a New To-Do Item"}}
+    <span class="item-create glyphicon glyphicon-floppy-disk item-save" {{action "saveNewItem" newItem}}></span>
+  </div>
+  {{errorMessage}}
+</div>
+  {{#each item in todoItems}}
+  <div class="row">
+    <div class="item">
+      <span {{action "toggleComplete" item}} {{bind-attr class=":glyphicon item.iscompleted:glyphicon-check:glyphicon-unchecked :item-complete"}}></span>
+      <span {{bind-attr class="item.iscompleted:strikethrough"}}>{{item.title}}</span>
+      <span {{action "itemDelete" item}} {{bind-attr class=":glyphicon :glyphicon-remove :item-remove item.iscompleted::invisible"}}></span>
+    </div>
+  </div>
+  {{/each}}
+  <div class="item">{{newItem}}</div>

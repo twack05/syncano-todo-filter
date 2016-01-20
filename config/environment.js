@@ -6,6 +6,11 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://api.syncano.io",
+      'font-src': "'self' https://maxcdn.bootstrapcdn.com",
+      'style-src': "'self' https://maxcdn.bootstrapcdn.com"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,10 +21,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      SYNCANO_API_KEY:'7cc94b9ca9087e544697560c68dd75f5620f5f03',
+      SYNCANO_INSTANCE_NAME:'billowing-snowflake-7678'
     }
   };
 
   if (environment === 'development') {
+    ENV.baseURL = '/syncano-todo'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
