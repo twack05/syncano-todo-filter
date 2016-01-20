@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'syncano-todo',
     environment: environment,
-    baseURL: '/syncano-todo',
+    baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
       'connect-src': "'self' https://api.syncano.io",
@@ -27,7 +27,6 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.baseURL = '/syncano-todo';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -48,7 +47,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/syncano-todo';
   }
 
   return ENV;
