@@ -9,9 +9,9 @@
   {{#each item in todoItems}}
   <div class="row">
     <div class="item">
-      <span {{action "toggleComplete" item}} {{bind-attr class=":glyphicon item.iscompleted:glyphicon-check:glyphicon-unchecked :item-complete"}}></span>
-      <span {{bind-attr class="item.iscompleted:strikethrough"}}>{{item.title}}</span>
-      <span {{action "itemDelete" item}} {{bind-attr class=":glyphicon :glyphicon-remove :item-remove item.iscompleted::invisible"}}></span>
+      <span {{action "toggleComplete" item}} {{bind-attr class=":glyphicon item.is_completed:glyphicon-check:glyphicon-unchecked :item-complete"}}></span>
+      <span {{bind-attr class="item.is_completed:strikethrough"}}>{{item.title}}</span>
+      <span {{action "itemDelete" item}} {{bind-attr class=":glyphicon :glyphicon-remove :item-remove item.is_completed::invisible"}}></span>
     </div>
   </div>
   {{/each}}
