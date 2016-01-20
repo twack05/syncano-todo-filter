@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    exportApplicationGlobal: true,
     contentSecurityPolicy: {
       'connect-src': "'self' https://api.syncano.io",
       'font-src': "'self' https://maxcdn.bootstrapcdn.com",
