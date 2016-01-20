@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'syncano-todo',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/syncano-todo',
     locationType: 'auto',
     contentSecurityPolicy: {
       'connect-src': "'self' https://api.syncano.io",
