@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   actions: {
     saveNewItem() {
       if (this.get('todoItems').length < 11) {
-        var newItem = {"title": this.get('newItem'), "is_completed": false},
+        var newItem = {'title': this.get('newItem'), 'is_completed': false},
           that = this;
         SyncanoTodo.api.class('todo').dataobject().add(newItem)
           .then(function(item) {
@@ -18,14 +18,9 @@ export default Ember.Controller.extend({
       }
     },
     toggleComplete(item) {
-      var that = this;
-        item.toggleProperty('is_completed');
-      SyncanoTodo.api.class('todo').dataobject(item.get('id')).update(
-        {
-          'is_completed': item.get('is_completed')
-      })
+      SyncanoTodo.api.class('todo').dataobject(item.get('id')).update({'is_completed': !item.get('is_completed')})
         .then(function(response) {
-
+          item.toggleProperty('is_completed');
         });
     },
     itemDelete(item) {
