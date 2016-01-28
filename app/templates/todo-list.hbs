@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="item-input">
+    {{input value=newItem placeholder="Enter a New To-Do Item"}}
+    <span class="item-create glyphicon glyphicon-floppy-disk item-save" {{action "saveNewItem" newItem}}></span>
+  </div>
+  {{errorMessage}}
+</div>
+<div class="nav-links">
+  {{#link-to "todos.index" activeClass="active"}}All{{/link-to}}
+  {{#link-to "todos.active" activeClass="active"}}Active{{/link-to}}
+  {{#link-to "todos.completed" activeClass="active"}}Complete{{/link-to}}
+</div>
+
+{{#each item in sortedTodoList}}
+  <div class="row">
+    <div class="item">
+      <span {{action "toggleComplete" item}} {{bind-attr class=":glyphicon item.is_completed:glyphicon-check:glyphicon-unchecked :item-complete"}}></span>
+      <span {{action "changePriority" item true}} class="glyphicon glyphicon-chevron-up item-up"></span>
+      <p {{bind-attr class="item.is_completed:strikethrough :item-text"}}>{{item.title}} ({{item.priority}})</p>
+      <span {{action "itemDelete" item}} {{bind-attr class=":glyphicon :glyphicon-remove :item-remove item.is_completed::invisible"}}></span>
+      <span {{action "changePriority" item false}} class="glyphicon glyphicon-chevron-down item-down"></span>
+    </div>
+  </div>
+{{/each}}
+
+{{#unless model}}
+<div class="item">No items found.</div>
+{{/unless}}
+<div class="item">{{newItem}}</div>

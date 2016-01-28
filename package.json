@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "express": "^4.13.3",
-    "syncano": "^0.4.6"
+    "syncano": "^0.4.7"
   }
 }

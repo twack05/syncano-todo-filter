@@ -1,3 +1,7 @@
+a {
+  font-size: 20px;
+}
+
 .item-input {
   font-size: 25px;
 }
@@ -15,11 +19,43 @@
   opacity: 1;
 }
 
-.item {
+.nav-links {
   margin-top: 10px;
-  padding: 0 30%;
-  width: 100%;
+}
+
+.nav-links a {
+  padding: 0 10px;
+}
+
+.active {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.item .glyphicon {
+  font-size: 20px;
+  opacity: 0.5;
+  margin: 0px 15px;
+  vertical-align: center;
+}
+
+.glyphicon:hover {
+  opacity: 1;
+}
+
+.item {
+  display: inline-block;
+  margin-top: 10px;
+  width: 35%;
   font-size: 25px;
+}
+
+.item-text {
+  overflow: hidden;
+  width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
 }
 
 .item-complete {
@@ -29,6 +65,14 @@
 
 .item-complete:hover {
   opacity: 1;
+}
+
+.item-up {
+  float: left;
+}
+
+.item-down {
+  float: right;
 }
 
 .invisible {
