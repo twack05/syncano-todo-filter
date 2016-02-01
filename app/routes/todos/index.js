@@ -14,5 +14,5 @@ export default Ember.Route.extend({
       });
   },
   templateName: 'todo-list',
-  controllerName: 'todos-list'
+  controllerName: 'todo-list'
 });
