@@ -48,7 +48,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/syncano-todo';
+    ENV.baseURL = '/syncano-todo-filter';
   }
 
   return ENV;
