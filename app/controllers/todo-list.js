@@ -26,8 +26,8 @@ export default Ember.Controller.extend({
     },
     changePriority(item, increase) {
       // Check if the user wants to increase or decrease the priority and update accordingly
-      var new_priority = increase ? item.get('priority') + 1 : item.get('priority') - 1,
-        that = this;
+      var new_priority = increase ? item.get('priority') + 1 : item.get('priority') - 1;
+      
       if (new_priority >= 0) { // Don't allow priority to fall below 0
         item.set('priority', new_priority);
         item.save();
